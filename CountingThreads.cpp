@@ -51,13 +51,6 @@ public:
             }
         }
     }
-    // Stopping counting
-    void stop() {
-        lock_guard<mutex> lock(countMutex);
-        stopCounting = true;
-    }
-    // Ensuring proper thread termination
-    ~Counter() { stop(); }
 };
 
 int main() {
